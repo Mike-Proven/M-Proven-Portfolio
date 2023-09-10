@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  M-Proven-Portfolio
 //
-//  Created by user01 on 9/4/23.
+//  Created by Mike-Proven on 9/4/23.
 //
 
 ///  Content is a combination of Features I can do and how much it might cost
@@ -12,13 +12,22 @@ import SwiftUI
 
 struct ContentView: View {
     // for the switch to change views
-    @Binding var showPageView: String    
+    @Binding var showPageView: String
+    
     var body: some View {
-        ZStack {
-            Button {showPageView = "disc_page"}
-                label: { Text("Some text")}
-            
-        } // end z
+        
+        NavigationStack {
+            ScrollView {
+                NavigationLink("To Do App", destination: ToDoView()
+                    .navigationTitle("Tasks")
+                    .navigationBarItems(trailing: EditButton())
+                )
+            }
+            .navigationTitle(Text("Services"))
+            .toolbarBackground(Color.cyan, for: .automatic)
+            .navigationBarTitleDisplayMode(.automatic)
+        }
+        
     } // end body
 } // end view
 

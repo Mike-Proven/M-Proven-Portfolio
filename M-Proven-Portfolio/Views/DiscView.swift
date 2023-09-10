@@ -2,7 +2,7 @@
 //  DiscView.swift
 //  M-Proven-Portfolio
 //
-//  Created by user01 on 9/4/23.
+//  Created by Mike-Proven on 9/4/23.
 //
 
 ///  DiscView is a combination of Disclaimer (not everything might be working right now)
@@ -13,6 +13,7 @@ import SwiftUI
 struct DiscView: View {
     // for the switch to change views
     @Binding var showPageView: String
+    
     var body: some View {
         ZStack (alignment: .topLeading) {
             Color.black.ignoresSafeArea() // bottom of z stack
