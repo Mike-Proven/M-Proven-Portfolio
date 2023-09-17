@@ -5,8 +5,6 @@
 //  Created by Mike-Proven on 9/4/23.
 //
 
-///  Content is a combination of Features I can do and how much it might cost
-///        Try to give a menu of example apps and features as a sample
 
 import SwiftUI
 
@@ -15,22 +13,49 @@ struct ContentView: View {
     @Binding var showPageView: String
     
     var body: some View {
-        
-        NavigationStack {
+        ZStack (alignment: .leading) { // zstack 1
+            Color(hue: 0.60, saturation: 0.16, brightness: 0.97).ignoresSafeArea() // bottom of z stack
+            //--- THE LAYER ABOVE Background
+            
             ScrollView {
-                NavigationLink("To Do App", destination: ToDoView()
-                    .navigationTitle("Tasks")
-                    .navigationBarItems(trailing: EditButton())
-                )
-            }
-            .navigationTitle(Text("Services"))
-            .toolbarBackground(Color.cyan, for: .automatic)
-            .navigationBarTitleDisplayMode(.automatic)
-        }
-        
+                Button {
+                    showPageView = "task_page"
+                } label: {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 30)
+                            .frame(width: 400)
+                            .foregroundColor(Color.blue)
+                            .shadow(radius: 6)
+                        Text("To Do List")
+                            .font(.largeTitle)
+                            .fontWeight(.light)
+                            .foregroundColor(.white)
+                    } // end button bar
+                    .frame(height: 50)
+                } // end lbl
+                // Button 2
+                Button {
+                    showPageView = "disc_page"
+                } label: {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 30)
+                            .frame(width: 400)
+                            .foregroundColor(Color.blue)
+                            .shadow(radius: 6)
+                        Text("App Description")
+                            .font(.largeTitle)
+                            .fontWeight(.light)
+                            .foregroundColor(.white)
+                    } // end button bar
+                    .frame(height: 50)
+                } // end lbl
+            } // end scroll
+            .padding()
+            
+           
+        } // zstack 1
     } // end body
-} // end view
-
+} // end view struct
 
 
 //--------------------PREVIEW

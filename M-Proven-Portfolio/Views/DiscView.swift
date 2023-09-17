@@ -5,9 +5,6 @@
 //  Created by Mike-Proven on 9/4/23.
 //
 
-///  DiscView is a combination of Disclaimer (not everything might be working right now)
-///  and About me as a developer
-
 import SwiftUI
 
 struct DiscView: View {
@@ -26,14 +23,14 @@ struct DiscView: View {
                 
             } // end V1
             VStack {  // text and pics
-                Text("version 0.0.1 beta")
+                Text("version 0.0.2 beta")
                     .foregroundColor(Color.cyan)
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .padding(10)
                     .multilineTextAlignment(.leading)
                 
-                    Text("Disclaimer: \nNot everything in this app might be working. \n\nIt is still in development. \n\nThis app is intended to be a portfolio to show the services I can provide.")
+                    Text("Disclaimer: \nNot everything in this app might be working. \n\nIt is still in development. \n\nThis app is intended to show the services I can provide. They are free in this app for individual users, but I can do more for your business. \n\nThank you for your consideration.")
                         .foregroundColor(Color.cyan)
                         .font(.title2)
                         .fontWeight(.bold)
